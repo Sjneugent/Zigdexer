@@ -1,15 +1,9 @@
 const std = @import("std");
 const help = @import("commands/help.zig");
 
-pub const App = struct {
-    pub fn run(writer: anytype) !void {
-        try writer.writeAll("Zigdexer baseline CLI\n");
-        try help.render(writer);
-    }
-};
-
 pub fn run(writer: anytype) !void {
-    try App.run(writer);
+    try writer.writeAll("Zigdexer baseline CLI\n");
+    try help.render(writer);
 }
 
 test "run prints banner and command help" {
